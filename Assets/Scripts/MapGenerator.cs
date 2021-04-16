@@ -59,7 +59,7 @@ public class MapGenerator : MonoBehaviour {
     
     public void GenerateMap()
     {
-        for(int x = intValues; x < mapSize.x; x++)
+        for(int x = 0; x < mapSize.x; x++)
         {
             for (int y = 0; y < mapSize.y; y++)
             {
