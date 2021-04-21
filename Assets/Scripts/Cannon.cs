@@ -6,7 +6,7 @@ public class Cannon : MonoBehaviour {
 
    // [Header("Attributes")]
 
-    public Transform target;
+    private Transform target;
     public float range = 15f;
 
     public string enemyTag = "Enemy";
@@ -51,11 +51,12 @@ public class Cannon : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         if (target == null)
             return;
 
-        Vector3 dir = target.position = transform.position;
+        Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         //  Vector3 rotation = lookRotation.eulerAngles;
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
@@ -67,8 +68,10 @@ public class Cannon : MonoBehaviour {
             fireCountdown = 1f / fireRate;
 
         }
+
+        fireCountdown -= Time.deltaTime;
     }
-     void Shoot()
+        void Shoot()
         {
             GameObject bulletGO =  (GameObject)Instantiate(BulletPreFab, firePiont.position, firePiont.rotation);
             Bullet bullet = bulletGO.GetComponent<Bullet>();
@@ -76,7 +79,7 @@ public class Cannon : MonoBehaviour {
             if (bulletGO != null)
                 bullet.Seek(target);
         }
-
+    
         
         
        
