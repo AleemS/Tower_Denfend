@@ -49,9 +49,9 @@ public class Cannon : MonoBehaviour {
             target = nearestEnemy.transform;
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         if (target == null)
             return;
 
@@ -59,7 +59,7 @@ public class Cannon : MonoBehaviour {
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         //  Vector3 rotation = lookRotation.eulerAngles;
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler (0f, rotation.y, 0f);
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
         if (fireCountdown <= 0f)
         {
@@ -67,8 +67,8 @@ public class Cannon : MonoBehaviour {
             fireCountdown = 1f / fireRate;
 
         }
-
-        void Shoot()
+    }
+     void Shoot()
         {
             GameObject bulletGO =  (GameObject)Instantiate(BulletPreFab, firePiont.position, firePiont.rotation);
             Bullet bullet = bulletGO.GetComponent<Bullet>();
@@ -77,10 +77,10 @@ public class Cannon : MonoBehaviour {
                 bullet.Seek(target);
         }
 
-        fireCountdown -= Time.deltaTime;
+        
         
        
-        }
+        
 
  
 

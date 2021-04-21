@@ -202,6 +202,10 @@ MonoBehaviour:
   enemyTag: Enemy
   partToRotate: {fileID: 0}
   turnSpeed: 10
+  fireRate: 1
+  fireCountdown: 0
+  BulletPreFab: {fileID: 0}
+  firePiont: {fileID: 0}
 --- !u!135 &135463800773250340
 SphereCollider:
   m_ObjectHideFlags: 1
