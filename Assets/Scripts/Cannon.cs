@@ -28,7 +28,7 @@ public class Cannon : MonoBehaviour {
     }
 		
 
-    void updateTarget ()
+    void UpdateTarget ()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;
@@ -60,10 +60,10 @@ public class Cannon : MonoBehaviour {
         //  Vector3 rotation = lookRotation.eulerAngles;
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler (0f, rotation.y, 0f);
-/*
+
         if (fireCountdown <= 0f)
         {
-          //  Shoot();
+            Shoot();
             fireCountdown = 1f / fireRate;
 
         }
@@ -71,24 +71,17 @@ public class Cannon : MonoBehaviour {
         void Shoot()
         {
             GameObject bulletGO =  (GameObject)Instantiate(BulletPreFab, firePiont.position, firePiont.rotation);
-            Bullet bullet = bulletGO.GetCompenent<Bullet>();
+            Bullet bullet = bulletGO.GetComponent<Bullet>();
 
             if (bulletGO != null)
                 bullet.Seek(target);
         }
 
         fireCountdown -= Time.deltaTime;
-        */
+        
        
         }
 
-  
- /*    void OnDrawGizmosSelected ()
-       {
-            Gizmos color = Color red;
-            Gizmos DrawWireSphere(transform.position, range);
-       }
- */
  
 
 }

@@ -41,8 +41,8 @@ public class MapGenerator : MonoBehaviour {
         string[] seperators = { "/n" };
         string[] strValues = text.Split(separators);
 
-        List<int> intValues = new List<int>();
-
+//        List<int> intValues = new List<int>();
+/*
         foreach (string str in strValues)
         {
             int val = 0;
@@ -51,8 +51,9 @@ public class MapGenerator : MonoBehaviour {
 
            
         }
+    */
     }
-
+    
 
     [Range(0, 1)]
     public float outlinePercent;
