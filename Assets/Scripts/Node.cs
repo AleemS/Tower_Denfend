@@ -17,10 +17,13 @@ public class Node : MonoBehaviour {
         // GetComponent<Renderer>().material.color = hoverColor;
 
         turretBuilder = TurretBuilder.instance;
+
+        
     }
 
     void OnMouseDown()
     {
+
         if (turretBuilder.GetTurretToBuild() == null)
             return;
 

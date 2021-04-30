@@ -9,12 +9,14 @@ public class Inventory : MonoBehaviour {
     private void Start()
     {
         turretBuilder = TurretBuilder.instance;
+
     }
+
+   
 
     public void PickTurret1()
     {
         turretBuilder.SetTurrettoBuild(turretBuilder.Turret1Prefab);
-  
 
     }
     public void PickTurret2()
