@@ -23,14 +23,15 @@ public class TurretBuilder : MonoBehaviour {
         instance = this;
     }
 
-    public GameObject standardTurretPrefab;
-    public GameObject turretTTwoPrefab;
+    public GameObject Turret1Prefab;
+    public GameObject turretT2Prefab;
+    public GameObject turretT3Prefab;
 
-   // private TurretBlueprint turretTo;
+    // private TurretBlueprint turretTo;
 
-   void Start()
+    public void SetTurrettoBuild (GameObject turret)
     {
-        turretToBuild = standardTurretPrefab;
+        turretToBuild = turret;
     }
 
     // Update is called once per frame
