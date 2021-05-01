@@ -5,8 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 
     private Transform target;
-    public float speed = 80f;
+    public float speed = 70f;
 
+    public int damage = 30;
     public void Seek(Transform _target)
     {
         target = _target;
@@ -41,5 +42,19 @@ public class Bullet : MonoBehaviour {
     void HitTarget()
     {
        Destroy(gameObject);
+    }
+
+    void Damage (Transform enemy)
+    {
+       Enemy e = enemy.GetComponent<Enemy>();
+
+        if (e != null)
+        {
+            e.TakeDamage(damage);
+        }
+
+        e.TakeDamage(damage);
+
+        Destroy(enemy.gameObject);
     }
 }

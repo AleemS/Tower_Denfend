@@ -5,6 +5,11 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
 
     TurretBuilder turretBuilder;
+    public TurretStats CannonT1;
+
+    public TurretStats CannonT2;
+
+    public TurretStats turretT3_1;
 
     private void Start()
     {
